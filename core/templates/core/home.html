@@ -4,24 +4,30 @@
 {% block title %}Home | FocusBox{% endblock %}
 
 {% block head_extra %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/home_style.css' %}">
 {% endblock %}
 
 {% block content %}
-<canvas id="rain-canvas"></canvas>
+<canvas id="ambient-canvas"></canvas>
+
+<div class="state-buttons">
+  <button data-state="rain">Rain</button>
+  <button data-state="forest">Forest</button>
+  <button data-state="winter">Winter</button>
+</div>
 
 <div class="main-content">
-    <h1 class="main-heading">Welcome to FocusBox</h1>
+    <h1 class="main-heading">Welcome to Quietune</h1>
     <p class="main-subtitle">Stay focused. Reflect deeply. Achieve more.</p>
-    <div class="button-row">
-        <button class="home-button"><span>Get Started Now</span></button>
-        <button class="home-button"><span>Login</span></button>
+    <div class="link-row">
+        <a href="{% url 'register' %}" class="home-link"><span>Get Started Now</span></a>
+        <a href="{% url 'login' %}" class="home-link"><span>Login</span></a>
     </div>
 </div>
 {% endblock %}
 
 {% block script %}
-<script src="{% static 'js/rain.js' %}"></script>
+<script src="{% static 'js/ambient.js' %}"></script>
 {% endblock %}
 
 

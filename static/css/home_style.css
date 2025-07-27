@@ -24,7 +24,7 @@ main {
 }
 
 /* Button Row */
-.button-row {
+.link-row {
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -32,7 +32,10 @@ main {
   margin: 0 auto;
 }
 
-.home-button {
+.home-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 1;
   padding: 0.75rem 1rem;
   font-size: 1rem;
@@ -44,47 +47,69 @@ main {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  text-decoration: none;
   transition: transform 0.1s ease, color 0.3s ease;
 }
 
-.home-button::before {
+
+
+.home-link::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #00BFFF;
+  background-color: var(--hover-color, #00BFFF); /* fallback = rain blue */
   opacity: 0.3;
   transform: translateX(-100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
   z-index: 0;
 }
 
-.home-button:hover::before {
+.home-link:hover::before {
   transform: translateX(0);
 }
 
-.home-button:hover {
+.home-link:hover {
   color: black;
 }
 
-.home-button span {
-  position: relative;
-  z-index: 2;
-}
-
-.home-button:active {
+.home-link:active {
   transform: scale(0.95);
 }
 
-#rain-canvas {
+#ambient-canvas {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none; /* ensures it's click-through */
-  z-index: 0; /* just above video, below content */
+  z-index: -1; /* Sit behind everything */
+  width: 100vw;
+  height: 100vh;
+  pointer-events: auto;
+}
+
+.state-buttons {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.state-buttons button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 0.75rem;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.state-buttons button:hover {
+  background: rgba(255, 255, 255, 0.3);
 }
 
