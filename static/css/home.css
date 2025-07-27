@@ -1,0 +1,90 @@
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Content Box */
+.main-content {
+  text-align: center;
+  transform: translateY(-10%);
+}
+
+.main-heading {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.main-subtitle {
+  font-size: 1.2rem;
+  color: #cccccc;
+  margin-bottom: 2rem;
+}
+
+/* Button Row */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.home-button {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  color: black;
+  background: white;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: transform 0.1s ease, color 0.3s ease;
+}
+
+.home-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #00BFFF;
+  opacity: 0.3;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.home-button:hover::before {
+  transform: translateX(0);
+}
+
+.home-button:hover {
+  color: black;
+}
+
+.home-button span {
+  position: relative;
+  z-index: 2;
+}
+
+.home-button:active {
+  transform: scale(0.95);
+}
+
+#rain-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* ensures it's click-through */
+  z-index: 0; /* just above video, below content */
+}
+

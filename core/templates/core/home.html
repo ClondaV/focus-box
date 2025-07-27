@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home | FocusBox{% endblock %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<canvas id="rain-canvas"></canvas>
+
+<div class="main-content">
+    <h1 class="main-heading">Welcome to FocusBox</h1>
+    <p class="main-subtitle">Stay focused. Reflect deeply. Achieve more.</p>
+    <div class="button-row">
+        <button class="home-button"><span>Get Started Now</span></button>
+        <button class="home-button"><span>Login</span></button>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/rain.js' %}"></script>
+{% endblock %}
+
+
