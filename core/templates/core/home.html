@@ -10,14 +10,14 @@
 {% block content %}
 <canvas id="ambient-canvas"></canvas>
 
-<div class="state-buttons">
-  <button data-state="rain">Rain</button>
-  <button data-state="forest">Forest</button>
-  <button data-state="winter">Winter</button>
-</div>
+<h1 class="title-logo">Quietune</h1>
+
+<button class="state-toggle-button" data-state="rain" aria-label="Toggle environment">
+  <span class="icon">🌧️</span>
+</button>
 
 <div class="main-content">
-    <h1 class="main-heading">Welcome to Quietune</h1>
+    <h2 class="main-heading">Welcome to Quietune</h2>
     <p class="main-subtitle">Stay focused. Reflect deeply. Achieve more.</p>
     <div class="link-row">
         <a href="{% url 'register' %}" class="home-link"><span>Get Started Now</span></a>
@@ -27,7 +27,7 @@
 {% endblock %}
 
 {% block script %}
-<script src="{% static 'js/ambient.js' %}"></script>
+<script src="{% static 'js/ambiental.js' %}"></script>
 {% endblock %}
 
 
