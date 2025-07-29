@@ -1,0 +1,81 @@
+/* Reset + layout base */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  color: white;
+  width: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
+.link-to-home {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  z-index: 10;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.link-to-home::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--hover-color, #000000);
+  opacity: 0.3;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: width 0.4s ease;
+  pointer-events: none;
+}
+
+.link-to-home:hover::after {
+  width: 100%;
+}
+
+#ambient-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.state-toggle-button {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.state-toggle-button .icon.pop {
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+

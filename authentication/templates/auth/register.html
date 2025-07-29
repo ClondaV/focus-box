@@ -1,5 +1,35 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block title %}Register{% endblock %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
 
 {% block content %}
-<h1>Register</h1>
+<div class="auth-container">
+  <div class="auth-box">
+    <h2>Create an Account</h2>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+
+      {% for field in form %}
+        <div class="form-group">
+          <label>{{ field.label }}</label>
+          {{ field }}
+          {% if field.errors %}
+            <div class="error">{{ field.errors|striptags }}</div>
+          {% endif %}
+        </div>
+      {% endfor %}
+
+      <button type="submit" class="btn">Register</button>
+    </form>
+
+    <p class="switch-link">
+      Already have an account? <a href="{% url 'login' %}">Login here</a>.
+    </p>
+  </div>
+</div>
 {% endblock %}

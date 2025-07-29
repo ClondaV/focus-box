@@ -3,6 +3,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
+  color: white;
 }
 
 /* Content Box */
@@ -70,7 +72,7 @@ main {
   transition: transform 0.3s ease, background-color 0.3s ease;
   z-index: 0;
   pointer-events: none;
-  clip-path: inset(0 round 30px); /* ✅ ensures round corners always */
+  clip-path: inset(0 round 30px); 
 }
 
 
@@ -86,60 +88,5 @@ main {
   transform: scale(0.95);
 }
 
-#ambient-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1; 
-  width: 100vw;
-  height: 100vh;
-  pointer-events: auto;
-}
 
-.state-toggle-button {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 10;
-  background-color: var(--hover-color, white);
-  border: none;
-  padding: 0.5rem;
-  font-size: 1.5rem;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease;
-}
-
-.state-toggle-button:active {
-  transform: scale(0.95);
-}
-
-.state-toggle-button .icon.pop {
-  animation: pop 0.3s ease;
-}
-
-@keyframes pop {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.4);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-
-.title-logo {
-  position: fixed;
-  top: 0;
-  left: 1rem;
-  font-size: 1.75rem;
-  font-weight: bold;
-  color: white;
-  z-index: 10;
-  pointer-events: none; /* prevents accidental text selection or clicks */
-}
 

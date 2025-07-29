@@ -4,11 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}FocusBox{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base2.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
     {% block head_extra %}{% endblock %}
 </head>
 <body>
+    <canvas id="ambient-canvas"></canvas>
+
+    <a href="/" class="link-to-home" data-text="Quietune">Quietune</a>
+    
+    <button class="state-toggle-button" aria-label="Toggle environment">
+        <span class="icon">🌧️</span>
+    </button>
+
     <main>
         {% block navbar %}{% endblock %}
         {% block content %}
@@ -16,7 +25,7 @@
     </main>
 
     {% block script %}
-        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'js/ambient2.js' %}"></script>
     {% endblock %}
 </body>
 </html>
